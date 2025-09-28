@@ -25,11 +25,14 @@
         <header>
           <h1>Barati, Mohammad</h1>
           <p>
-            Aspiring Data Engineer Skilled in Relational and NoSQL Databases, Data Visualization, and OOP in Python.</p>
+            Data Engineer Skilled in ETL/ELT Development, Data Warehousing, Data Visualization, and OOP in Python.</p>
             <p></p>
             <a href="https://www.linkedin.com/in/mhmdbarati/">@LinkedIn</a>
             /
             <a href="https://github.com/baratimohammad">@GitHub</a>
+            /
+            <a href="https://hub.docker.com/repositories/mohammadbarati">@Docker</a>
+
           </p>
           <ul class="actions">
             <li>
@@ -72,12 +75,16 @@
               data management and optimization.</p>
 
               <p>Data Analysis & Visualization:<br>
-                Skilled in <strong>Tableau</strong>, <strong>pandas</strong>, <strong>geopandas</strong>, <strong>seaborn</strong>, 
+                Skilled in <strong>Tableau</strong>, <strong>Grafana</strong>, <strong>pandas</strong>, <strong>geopandas</strong>, <strong>seaborn</strong>, 
               and <strong>Matplotlib</strong>, 
               transforming complex data into actionable insights.</p>
 
-          <p>Programming: <br>Strong command of <strong>Python (functional & OOP)</strong> 
-            and <strong>microservice architecture</strong>, ensuring <strong>scalable</strong> and <strong>efficient</strong> software solutions.</p>
+          
+              <p>Programming & Deployment:<br>
+                Strong command of <strong>Python (functional & OOP)</strong>, <strong>microservice architecture</strong>, 
+                and <strong>Docker</strong> for containerized development, ensuring <strong>scalable</strong>, <strong>portable</strong>, and 
+                <strong>efficient</strong> software solutions.
+              </p>
 
               <p>Connected Systems: <br>
                 Expertise in <strong>RESTful APIs</strong> using <strong>Cherrypy</strong> and <strong>event-driven architectures</strong> 
@@ -111,57 +118,37 @@
         </div>
       </section>
 
-      <!-- Section -->
+             <!-- Section -->
        <section>
         <header>
-          <h2>Database Architecture and Query</h2>
+          <h2>MetroBike Mobility Application: ETL, Datawarehousing, and Visualization</h2>
         </header>
         <div class="content">
           <p>
-            At the provided <a href="https://docs.google.com/presentation/d/1tskTsDWQ8ukgXQEfilKaOvpaEt2WmQES7wggxmHZ-MU/edit?usp=sharing">link</a>, you will find a 
-            Google Slides presentation detailing the exercises 
-            from the <strong>Database Systems</strong> course. These exercises were completed individually <strong>based on a scenario</strong> given by the instructor,
-             <a href= "https://www.polito.it/personale?p=003201">Prof. Silvia Chiusano</a>,  
-            to reinforce our understanding of <strong>conceptual entity-relationship diagrams, logical design, 
-            and SQL queries</strong>.  
+            This project implements a fully <strong>containerized ETL pipeline</strong> to process historical bike-sharing data from Austin (2013–present). 
+            Its purpose is to help stakeholders analyze bike usage patterns, station performance, demand distribution, 
+            and vehicle or subscription trends, enabling more informed operational and planning decisions.
+            <span class="image main"><img src="images/AustinTripsETLHighLevelArchitecture.png" alt="" /></span>
+
+            The pipeline automatically <strong>extracts</strong> raw trip data, 
+            <strong>transforms</strong> it using <strong>Apache Spark</strong> to generate key metrics — such as 
+            trips per kiosk, trips per hour, top-performing stations, and subscription or bike type breakdowns — and then <strong>loads</strong> 
+            the results into a <strong>PostgreSQL-based data warehouse</strong>. This warehouse organizes the data into <strong>fact and dimension tables</strong>, 
+            providing a solid foundation for analysis and ensuring stakeholders can explore patterns across multiple dimensions 
+            (time, location, membership type, vehicle type).
+            <span class="image main"><img src="images/AustinTripsTimelyDashboard.jpg" alt="" /></span>
+            For exploration, <strong>interactive Grafana dashboards</strong> allow filtering and drilling down into metrics
+             like trips by start kiosk, demand distribution over time, geospatial performance of top stations, 
+             and trips segmented by subscription or bike type. The entire workflow is <strong>orchestrated via a shell script</strong>
+            and <strong>containerized with Docker</strong>, combining three services: <strong>Spark for distributed data processing</strong>, 
+             <strong>PostgreSQL for the data warehouse</strong>, and <strong>Grafana for dashboard-based insights</strong>.
+            <span class="image main"><img src="images/AustinTripsSubAndTypeDashboard.jpg" alt="" /></span>
+            The repository for this personal project can be accessed here: 
+            <a href="https://github.com/baratimohammad/AustinTrips" target="_blank">Github</a>.
           </p>
         </div>
        </section>
 
-      <!-- Section -->
-       <section>
-        <header>
-          <h2>Data Warehouse Architecture and Query</h2>
-        </header>
-        <div class="content">
-          <p>
-            At the provided <a href = "https://docs.google.com/presentation/d/1J6DOFYoaPJY-RYslwgIvTq0MHnikAtMU0NiKOy3kbo0/edit?usp=sharing">link</a>, 
-            you can find a Google Slides presentation of some of the many <strong>Data Warehouse</strong> exercises in my
-            <strong>Data Management and Visualization</strong> course. They were solved
-            based on a scenario given by the instructor, <a href = "https://www.polito.it/personale?p=017160">Prof. Daniele Apiletti</a>.
-            During lab sessions, we worked on exercises focused on <strong>data warehouse architecture</strong>
-             and <strong>advanced querying</strong>, 
-            allowing me to develop an understanding of efficient data structuring and performance tuning. 
-            Collaborating in a group setting also enhanced my <strong>teamwork, problem-solving skills</strong>.
-          </p>
-        </div>
-       </section>
-
-      <!-- Section -->
-       <section>
-        <header>
-          <h2>MongoDB Architecture and Query</h2>
-        </header>
-        <div class="content">
-          <p>
-            At the provided <a href = "https://docs.google.com/presentation/d/1rOc7m8Wh9Jxil4R7sS7eYvkN463Zjv1fRv51jqDhnYw/edit?usp=sharing">link</a>, 
-            you can find a Google Slides presentation of some of the many <strong>MongoDB</strong> exercises in my
-            <strong>Data Management and Visualization</strong> course. These exercises were also solved
-            based on a scenario given by the instructor, <a href = "https://www.polito.it/personale?p=017160">Prof. Daniele Apiletti</a>,
-            in a group setting.
-          </p>
-        </div>
-       </section>
 
              <!-- Section -->
        <section>
@@ -231,23 +218,75 @@ the implementation of the <strong>subscriber service, InfluxDB integration</stro
 <p>You can explore the project's <a href="https://docs.google.com/document/d/1v8a14y5BS5jaOrkNAdEz0l-nb5mh-IQsSiEl6pdgnkA/edit?usp=sharing">Documentation</a> and  
 <a href="https://github.com/baratimohammad/Gluco">GitHub Repository</a>.  
 </p>  
-<span class="image main"><img src="images/1ujus0.jpg" alt="" /></span> 
 
         </div>
        </section>
+      <!-- Section -->
+       <section>
+        <header>
+          <h2>Database Architecture and Query</h2>
+        </header>
+        <div class="content">
+          <p>
+            At the provided <a href="https://docs.google.com/presentation/d/1tskTsDWQ8ukgXQEfilKaOvpaEt2WmQES7wggxmHZ-MU/edit?usp=sharing">link</a>, you will find a 
+            Google Slides presentation detailing the exercises 
+            from the <strong>Database Systems</strong> course. These exercises were completed individually <strong>based on a scenario</strong> given by the instructor,
+             <a href= "https://www.polito.it/personale?p=003201">Prof. Silvia Chiusano</a>,  
+            to reinforce our understanding of <strong>conceptual entity-relationship diagrams, logical design, 
+            and SQL queries</strong>.  
+          </p>
+        </div>
+       </section>
 
+      <!-- Section -->
+       <section>
+        <header>
+          <h2>Data Warehouse Architecture and Query</h2>
+        </header>
+        <div class="content">
+          <p>
+            At the provided <a href = "https://docs.google.com/presentation/d/1J6DOFYoaPJY-RYslwgIvTq0MHnikAtMU0NiKOy3kbo0/edit?usp=sharing">link</a>, 
+            you can find a Google Slides presentation of some of the many <strong>Data Warehouse</strong> exercises in my
+            <strong>Data Management and Visualization</strong> course. They were solved
+            based on a scenario given by the instructor, <a href = "https://www.polito.it/personale?p=017160">Prof. Daniele Apiletti</a>.
+            During lab sessions, we worked on exercises focused on <strong>data warehouse architecture</strong>
+             and <strong>advanced querying</strong>, 
+            allowing me to develop an understanding of efficient data structuring and performance tuning. 
+            Collaborating in a group setting also enhanced my <strong>teamwork, problem-solving skills</strong>.
+          </p>
+        </div>
+       </section>
 
+      <!-- Section -->
+       <section>
+        <header>
+          <h2>MongoDB Architecture and Query</h2>
+        </header>
+        <div class="content">
+          <p>
+            At the provided <a href = "https://docs.google.com/presentation/d/1rOc7m8Wh9Jxil4R7sS7eYvkN463Zjv1fRv51jqDhnYw/edit?usp=sharing">link</a>, 
+            you can find a Google Slides presentation of some of the many <strong>MongoDB</strong> exercises in my
+            <strong>Data Management and Visualization</strong> course. These exercises were also solved
+            based on a scenario given by the instructor, <a href = "https://www.polito.it/personale?p=017160">Prof. Daniele Apiletti</a>,
+            in a group setting.
+
+          </p>
+                              <!-- <span class="image main"><img src="images/1ujus0.jpg" alt="" /></span>  -->
+
+        </div>
+
+       </section>
 
       <!-- Section -->
       <section>
         <header>
-          <h1>What Else?</h1>
+          <h1>Final Words</h1>
         </header>
         <div class="content">
           <p>
             I take initiative and lead by example, having spearheaded multiple projects with 
               <strong>accountability</strong> and <strong>strategic vision</strong>. As a <strong>critical thinker</strong> 
-              and <strong>problem solver</strong>, I navigate 
+              and <strong>task solver</strong>, I navigate 
               challenges effectively, ensuring well-structured and innovative solutions. 
               My strong <strong>time management</strong>, <strong>flexibility</strong>, and 
               <strong>adaptability</strong> allow me to excel in fast-paced, 
